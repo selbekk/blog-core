@@ -1,0 +1,11 @@
+# Build
+dist
+
+# Downloadable content
+node_modules
+
+# Logs
+*.log
+
+# Editor files
+.idea

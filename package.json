@@ -1,0 +1,38 @@
+{
+  "name": "blog-core",
+  "version": "1.0.0",
+  "description": "The core module of a blog",
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "gulp",
+    "clean": "rimraf dist",
+    "start": "babel-node app.js",
+    "watch": "npm run build && gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/selbekk/blog-core.git"
+  },
+  "author": "selbekk <selbeezy@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/selbekk/blog-core/issues"
+  },
+  "homepage": "https://github.com/selbekk/blog-core#readme",
+  "dependencies": {
+    "babel": "^5.6.7",
+    "express": "^4.13.0",
+    "express-handlebars": "^2.0.1",
+    "logbekk": "^1.0.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.0.3",
+    "gulp-minify-css": "^1.2.0",
+    "immutable": "^3.7.4",
+    "npm-build-tools": "^2.1.1",
+    "rimraf": "^2.4.0"
+  }
+}
