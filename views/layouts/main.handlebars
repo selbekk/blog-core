@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
-    {{> head }}
-    <body>
-        <div class="page-container">
-            <div class="page-content">
-                <header class="page-header">
-                    <hgroup>
-                        <h1 class="page-header-title">selbekk</h1>
-                        <h2 class="page-header-subtitle">node. frontend. mad science.</h2>
-                    </hgroup>
-                </header>
-                {{{ body }}}
-            </div>
-        </div>
-    </body>
+{{> head }}
+<body>
+<div class="page-container">
+    <div class="page-content">
+        <header class="page-header">
+            <h1 class="page-header-title">
+                <a href="/">selbekk</a>
+            </h1>
+            <nav class="category-nav">
+                <ul class="category-nav-list">
+                    {{#each categories}}
+                        <li><a href="/category/{{ slug }}" class="category-link">{{ name }}.</a></li>
+                    {{/each}}
+                </ul>
+            </nav>
+        </header>
+        {{{ body }}}
+    </div>
+</div>
+</body>
 </html>
