@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "The core module of a blog",
   "scripts": {
-    "start": "cd dist/backend && iojs app.js",
-    "build": "babel src --out-dir dist",
-    "watch": "babel src --watch --out-dir dist"
+    "start": "cd src && babel-node app.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +20,8 @@
     "express": "^4.13.0",
     "express-handlebars": "^2.0.1",
     "logbekk": "^1.0.4"
+  },
+  "devDependencies": {
+    "npm-build-tools": "^2.1.1"
   }
 }
