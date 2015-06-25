@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "The core module of a blog",
   "scripts": {
-    "start": "cd src/backend && iojs app.js"
+    "start": "cd dist/backend && iojs app.js",
+    "build": "babel src/backend --out-dir dist/backend",
+    "watch": "babel src/backend --watch --out-dir dist/backend"
   },
   "repository": {
     "type": "git",
@@ -16,6 +18,7 @@
   },
   "homepage": "https://github.com/selbekk/blog-core#readme",
   "dependencies": {
+    "babel": "^5.6.7",
     "express": "^4.13.0",
     "logbekk": "^1.0.4"
   }
