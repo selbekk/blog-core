@@ -1,0 +1,18 @@
+{
+  "name": "blog-core",
+  "version": "1.0.0",
+  "description": "The core module of a blog",
+  "scripts": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/selbekk/blog-core.git"
+  },
+  "author": "selbekk <selbeezy@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/selbekk/blog-core/issues"
+  },
+  "homepage": "https://github.com/selbekk/blog-core#readme"
+}
