@@ -4,8 +4,8 @@
   "description": "The core module of a blog",
   "scripts": {
     "start": "cd dist/backend && iojs app.js",
-    "build": "babel src/backend --out-dir dist/backend",
-    "watch": "babel src/backend --watch --out-dir dist/backend"
+    "build": "babel src --out-dir dist",
+    "watch": "babel src --watch --out-dir dist"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "dependencies": {
     "babel": "^5.6.7",
     "express": "^4.13.0",
+    "express-handlebars": "^2.0.1",
     "logbekk": "^1.0.4"
   }
 }
