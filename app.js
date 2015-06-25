@@ -8,6 +8,8 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.set('port', process.env.PORT || 4000);
 
+app.use('/assets', express.static('dist'));
+
 app.get('/', (req, res) => {
   res.render('index');
 });
