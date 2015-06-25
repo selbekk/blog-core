@@ -1,6 +1,7 @@
 var exphbs = require('express-handlebars'),
     express = require('express'),
-    log = new (require('logbekk'))();
+    log = new (require('logbekk'))(),
+    resource = require('./file-resource');
 
 var articles = [
     { slug: 'node-article', category: 'node', title: 'node article', body: 'the body is short or long. and about node.' },
@@ -19,6 +20,10 @@ app.set('port', process.env.PORT || 4000);
 app.use('/assets', express.static('dist'));
 
 app.get('/', (req, res) => {
+    resource.getAll()
+        .then((files) => console.log('contents: ', files))
+        .catch((err) => console.log('error', err)); // TODO: Handle errors in a better way (middleware)
+
     res.render('index', { title: 'My awesome blog', categories: categories, articles: articles });
 });
 
