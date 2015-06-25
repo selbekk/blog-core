@@ -3,7 +3,7 @@ var exphbs = require('express-handlebars'),
     log = new (require('logbekk'))();
 
 var articles = [
-    { slug: 'node-article', category: 'node', title: 'node article', body: 'the body is short or long. and about node' },
+    { slug: 'node-article', category: 'node', title: 'node article', body: 'the body is short or long. and about node.' },
     { slug: 'frontend-article', category: 'frontend', title: 'frontend article', body: 'a frontend body.' },
     { slug: 'mad-science-article', category: 'mad-science', title: 'CRAZY', body: 'incredible science.' }
 ];
