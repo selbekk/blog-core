@@ -2,9 +2,7 @@
   "name": "blog-core",
   "version": "1.0.0",
   "description": "The core module of a blog",
-  "scripts": {
-
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/selbekk/blog-core.git"
@@ -14,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/selbekk/blog-core/issues"
   },
-  "homepage": "https://github.com/selbekk/blog-core#readme"
+  "homepage": "https://github.com/selbekk/blog-core#readme",
+  "dependencies": {
+    "express": "^4.13.0"
+  }
 }
