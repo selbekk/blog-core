@@ -6,7 +6,8 @@
     "prebuild": "npm run clean",
     "build": "gulp",
     "clean": "rimraf dist",
-    "start": "cd src && babel-node app.js"
+    "start": "cd src && babel-node app.js",
+    "watch": "npm run build && gulp watch"
   },
   "repository": {
     "type": "git",
