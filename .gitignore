@@ -1,5 +1,8 @@
-# Ignore downloadable content
+# Build
+dist/
+
+# Downloadable content
 node_modules/
 
-# Ignore logs
+# Logs
 *.log
