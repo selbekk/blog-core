@@ -1,6 +1,9 @@
 module.exports = {
     PATHS: {
-        LESS: 'frontend/less/main.less',
+        LESS: {
+            ALL: 'frontend/less/**/*.less',
+            MAIN: 'frontend/less/main.less'
+        },
         DIST: 'dist/'
     }
 };
