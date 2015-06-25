@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "The core module of a blog",
   "scripts": {
+    "prebuild": "npm run clean",
+    "build": "gulp",
+    "clean": "rimraf dist",
     "start": "cd src && babel-node app.js"
   },
   "repository": {
@@ -22,6 +25,13 @@
     "logbekk": "^1.0.4"
   },
   "devDependencies": {
-    "npm-build-tools": "^2.1.1"
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.0.3",
+    "gulp-minify-css": "^1.2.0",
+    "immutable": "^3.7.4",
+    "npm-build-tools": "^2.1.1",
+    "rimraf": "^2.4.0"
   }
 }
