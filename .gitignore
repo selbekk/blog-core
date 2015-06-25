@@ -1,1 +1,5 @@
+# Ignore downloadable content
 node_modules/
+
+# Ignore logs
+*.log
