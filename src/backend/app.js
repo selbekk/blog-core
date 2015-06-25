@@ -1,5 +1,6 @@
 var express = require('express'),
-    log = require('logbekk')();
+    Logger = require('logbekk'),
+    log = new Logger();
 
 var app = express();
 
