@@ -1,8 +1,11 @@
 # Build
-dist/
+dist
 
 # Downloadable content
-node_modules/
+node_modules
 
 # Logs
 *.log
+
+# Editor files
+.idea
