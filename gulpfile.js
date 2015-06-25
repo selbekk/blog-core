@@ -5,7 +5,7 @@ var config = require('./gulp/config'),
 gulp.task('build:style', style.build);
 
 gulp.task('watch', function() {
-    gulp.watch(config.PATHS.LESS.ALL);
+    gulp.watch(config.PATHS.LESS.ALL, ['build:style']);
 });
 
 gulp.task('default', ['build:style']);
