@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
     res.render('index', { title: 'My awesome blog', categories: categories, articles: articles });
 });
 
-app.get('/category/:slug', (req, res, next) => {
+app.get('/category/:slug', (req, res) => {
     var category = req.params.slug.toLowerCase();
     var hits = articles.filter((article) => article.category === category);
     if(hits.length) {
