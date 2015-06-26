@@ -3,14 +3,6 @@ var exphbs = require('express-handlebars'),
     log = new (require('logbekk'))(),
     resource = require('./file-resource');
 
-var articles = [
-    { slug: 'node-article', category: 'node', title: 'node article', body: 'the body is short or long. and about node.' },
-    { slug: 'frontend-article', category: 'frontend', title: 'frontend article', body: 'a frontend body.' },
-    { slug: 'mad-science-article', category: 'mad-science', title: 'CRAZY', body: 'incredible science.' }
-];
-
-var categories = articles.map((article) => { return { name: article.category.replace(/-/g, ' '), slug: article.category } });
-
 var app = express();
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 
@@ -21,26 +13,25 @@ app.use('/assets', express.static('dist'));
 
 app.get('/', (req, res) => {
     resource.getAll()
-        .then((files) => console.log('contents: ', files))
+        .then((articles) => {
+            res.render('index', { title: 'My awesome blog', articles: articles });
+        })
         .catch((err) => console.log('error', err)); // TODO: Handle errors in a better way (middleware)
-
-    res.render('index', { title: 'My awesome blog', categories: categories, articles: articles });
-});
-
-app.get('/category/:slug', (req, res) => {
-    var category = req.params.slug.toLowerCase();
-    var hits = articles.filter((article) => article.category === category);
-    if(hits.length) {
-        return res.render('category', {title: category, categories: categories, articles: hits });
-    }
 });
 
 app.get('/:slug', (req, res, next) => {
-    var hits = articles.filter((article) => article.slug === req.params.slug.toLowerCase());
-    if(hits.length) {
-        var article = hits[0];
-        return res.render('article', { title: article.title, categories: categories, article: article });
-    }
+    resource.get(req.params.slug)
+        .then((article) => {
+            if(article) {
+                res.render('article', { title: article.title, article: article });
+            }
+            else {
+                var error = new Error('Not found');
+                error.status = 404;
+                next(error);
+            }
+        })
+        .catch(next);
 });
 
 
