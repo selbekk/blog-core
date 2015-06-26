@@ -1,15 +1,20 @@
 var fs = require('fs'),
-    Q = require('q');
+    Q = require('q'),
+    parser = require('./parser');
 
 var get = function(id) {
     var deferred = Q.defer();
 
-    fs.readFile('./content/' + id, { encoding: 'utf-8' }, function(err, file) {
+    if(!id.trim().endsWith('.md')) {
+        id = id + '.md';
+    }
+
+    fs.readFile('./content/' + id, { encoding: 'utf-8' }, function(err, content) {
         if(err) {
             return deferred.reject(err);
         }
 
-        deferred.resolve(file);
+        deferred.resolve(parser.parse(content, id));
     });
 
     return deferred.promise;
@@ -17,6 +22,7 @@ var get = function(id) {
 
 var getAll = function() {
     var deferred = Q.defer();
+
     fs.readdir('./content', function(err, files) {
         if(err) {
             return deferred.reject(err);
@@ -27,6 +33,7 @@ var getAll = function() {
             .catch((err) => deferred.reject(err));
 
     });
+
     return deferred.promise;
 };
 
